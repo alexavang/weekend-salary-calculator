@@ -1,20 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
-  <title>Salary Calculator</title>
-</head>
-<body>
-  <header>
-    <h1>Salary Calculator</h1>
-  </header>
-  <main>
-    <h2>Add Employee</h2>
-    <h2>Employees</h2>
-  </main>
-  <footer>
-    <p>Total Monthly</p>
-  </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <title>Salary Calculator</title>
+  </head>
+  <body>
+    <div class="background">
+      <header>
+        <h1><span class="animation"></span></h1>
+      </header>
+      <main>
+        <h2>Add Employee</h2>
+        <form>
+          <input
+            data-testid="firstNameInput"
+            placeholder="First Name"
+            type="text"
+            id="firstName"
+          />
+          <input
+            data-testid="lastNameInput"
+            placeholder="Last Name"
+            type="text"
+            id="lastName"
+          />
+          <input data-testid="idInput" placeholder="ID" type="text" id="ID" />
+          <input
+            data-testid="titleInput"
+            placeholder="Job Title"
+            type="text"
+            id="jobTitle"
+          />
+          <input
+            data-testid="annualSalaryInput"
+            placeholder="Annual Salary"
+            type="text"
+            id="annualSalary"
+          />
+          <button
+            data-testid="submitButton"
+            id="submit"
+            onclick="submitButton(event)"
+          >
+            Submit
+          </button>
+          <h2>Employees</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Annual Salary</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="tableInfo"></tbody>
+          </table>
+        </form>
+      </main>
+      <footer id="totalMonthly">
+        <p>Total Monthly:</p>
+      </footer>
+    </div>
+  </body>
 </html>
